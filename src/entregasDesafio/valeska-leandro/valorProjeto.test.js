@@ -37,13 +37,26 @@ describe('Valor total do projeto', () => {
   test('Retornar valor do projeto 0 caso a o valor da hora do desenvolvedor seja 0.', () => {
     //setup
     const funcionalidades = ['setup', 'formulario', 'responsividade', 'ssr', 'construcao_1_pagina']
-    const valorHora = 0
+    const valorHora = '0'
 
     //action
     const resultado = calcularValorTotalProjeto(funcionalidades, valorHora)
 
     //verification
     expect(resultado).toEqual(0)
+
+  })
+
+  test('Retornar NaN caso a o valor da hora do desenvolvedor não seja um número.', () => {
+    //setup
+    const funcionalidades = ['setup', 'formulario', 'responsividade', 'ssr', 'construcao_1_pagina']
+    const valorHora = 'string inválida'
+
+    //action
+    const resultado = calcularValorTotalProjeto(funcionalidades, valorHora)
+
+    //verification
+    expect(resultado).toBeNaN()
 
   })
 })
