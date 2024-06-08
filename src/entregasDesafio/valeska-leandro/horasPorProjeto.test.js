@@ -23,4 +23,28 @@ describe('Cálculo de horas totais de um projeto', () => {
     expect(resultado).toBe(32)
     expect(resultado).toBeGreaterThan(30)
   })
+
+  test('Retornar 0 horas caso não receba nenhuma funcionalidade', () => {
+    //setup
+    const funcionalidades = []
+
+    //action
+    const resultado = calcularHorasDeProjeto(funcionalidades)
+
+    //verification
+    expect(resultado).toBe(0)
+  })
+
+  test('Retornar 0 horas caso receba um funcionalidade não listada', () => {
+    //setup
+    const funcionalidades = ['inválida', 'setup']
+
+    //action
+    const resultado = calcularHorasDeProjeto(funcionalidades)
+
+    //verification
+    expect(resultado).toBe(0)
+    
+    //O teste falha por que o retorno é NaN, já que acredito que a possibilidade não foi levada em conta, mas acredito ser um teste útil.
+  })
 })
