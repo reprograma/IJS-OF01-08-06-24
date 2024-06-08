@@ -19,5 +19,31 @@ describe('Valor total do projeto', () => {
     //verification
     expect(resultado).toEqual(4312)
 
+  })  
+
+  test('Retornar valor do projeto 0 caso a lista de funcionalidades esteja vazia.', () => {
+    //setup
+    const funcionalidades = []
+    const valorHora = 70
+
+    //action
+    const resultado = calcularValorTotalProjeto(funcionalidades, valorHora)
+
+    //verification
+    expect(resultado).toEqual(0)
+
+  })
+
+  test('Retornar valor do projeto 0 caso a o valor da hora do desenvolvedor seja 0.', () => {
+    //setup
+    const funcionalidades = ['setup', 'formulario', 'responsividade', 'ssr', 'construcao_1_pagina']
+    const valorHora = 0
+
+    //action
+    const resultado = calcularValorTotalProjeto(funcionalidades, valorHora)
+
+    //verification
+    expect(resultado).toEqual(0)
+
   })
 })
