@@ -11,9 +11,7 @@ describe('Valor por hora', () => {
     //verification
     expect(resultado).toEqual(29)
   })
-})
 
-describe('Valor por hora', () => {
   test('Retornar o valor arredondado para cima em uma renda decimal', () => { 
     //setup 
     const valorPorMes = 1450.80;
@@ -23,5 +21,16 @@ describe('Valor por hora', () => {
 
     //verification
     expect(resultado).toEqual(9)
+  })
+
+  test('Retornar 0 se a renda mensal for 0.', () => { 
+    //setup 
+    const valorPorMes = 0;
+
+    //action
+    const resultado = calcularValorPorHora(valorPorMes)
+
+    //verification
+    expect(resultado).toBe(0)
   })
 })
