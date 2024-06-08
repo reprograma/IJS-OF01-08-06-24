@@ -17,7 +17,7 @@ describe('Calcular o pacote correto para cada projeto', ()=>{
         const resultado = calcularPacote(totalDeHorasPorProjeto)
         // verificação
         expect(resultado).toEqual('pacote_basico')
-    })
+    });
 
     test('Retorna pacote intermediário caso o número total de hoas seja exatamente 100', ()=>{
         //setup
