@@ -45,6 +45,5 @@ describe('Cálculo de horas totais de um projeto', () => {
     //verification
     expect(resultado).toBeNaN()
     
-    //O teste falha por que o retorno é NaN, já que acredito que a possibilidade não foi levada em conta, mas acredito ser um teste útil.
   })
 })
